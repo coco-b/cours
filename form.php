@@ -19,12 +19,11 @@
 				<input type="number" name="age" id="age"><br/>
 					
 				<label for="langage">Langage:</label>
-				<input type="langage" name="langage" id="langage"/><br/>
 					<select name="langage">
 						<option disabled selected>choisi ton langage</option> 
 							<option value="php">Php</option>
-							<option value="php">Ruby</option>
-							<option value="php">Js</option>
+							<option value="Ruby">Ruby</option>
+							<option value="Js">Js</option>
 					</select>  				
 			</fieldset>
 				<div id="envoyer"><input type="submit" value="envoyer"/></div>

@@ -1,43 +1,51 @@
 
+<?php
 
-<?php 
-var_dump($_POST);
+// on appel le fichier dans la base de donnée une seul fois avec _once
 
+include_once 'modele/connection_bdd.php';
 
-------------------
-
-if (empty($_POST['nom'])&& empty($_POST['prenom'])){
-echo $_POST['nom'].$_POST['prenom'].$_POST['age'];
+//on veut que tous les champs soient remplis
+	if(empty($_POST['nom']) AND
+	   empty($_POST['prenom']) AND
+	   empty($_POST['age']) AND
+	   empty($_POST['langage']) 
+	){
+	echo "merci de remplir tous les champs";
 }
-
+//convertir les caractere en string ->securite ->filtre htmlspecialchars
 else{
-	echo htmlspecialchars($_POST['nom']) . htmlspecialchars($_POST['prenom'] . htmlspecialchars($_POST['age']);
-}
-----------------
-$tab_assoc = [
-	'nom'=> 'boubou',
-	'prenom'=> 'caroline',
-	'age'=> '40'
-	];
+	$nom = htmlspecialchars($_POST['nom']);
+	$prenom = htmlspecialchars($_POST['prenom']);
+	$age = htmlspecialchars($_POST['age']);
+	$langage = htmlspecialchars($_POST['langage']);
+// le nom de ma requete soit $query
+	//etape:on prepare la requete
+	$query = $bdd->prepare('INSERT INTO eleve (nom,prenom,age,langage) VALUES(?,?,?,?)');
+	// etape:executer la requete
+	$query->execute(array(
+		$nom,
+		$prenom,
+		$age,
+		$langage
+		));
+	// etape : mettre fin a la requete
+	$query->closeCursor();
+}	
 
-foreach ($tab_assoc as $key => $value){
-	echo $key .':' $value . '<br>';
-}
+//redirection 
 
-?>
+header('location:form.php');
 
----------------
-if (empty($_POST['prenom']) && empty($_POST['age'])){
-		echo "remplir les info";
-}
-		else{
-			$result = [];
-			foreach($_POST as $key => $value){
-				$result[$key] = htmlspecialchars($value);
-			}
 
-		}
-var_dump($result);
+//en parallele ...
+//ecrir  nom dans mon form
+//echo $_POST['nom'];
+
+// enregistrement dans la base de donnée
+
+
+
 
 
 
