@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>formulaire</title>
-    
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>		
+<?php include 'includes/header.php'; ?>		
 		<form method="POST" action="result.php">
 			<fieldset>
 				<label for="nom">Your name:</label>
@@ -28,9 +20,9 @@
 			</fieldset>
 				<div id="envoyer"><input type="submit" value="envoyer"/></div>
 </form>
-</body>
-</html>
+
+<?php include 'includes/footer.php'; ?>
 		
 
 					
-				</form>
+				
