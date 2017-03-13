@@ -28,18 +28,17 @@ $result = $bdd->query('SELECT * FROM eleve');
 					<tbody>
 						<?php
 						//fetch (=va chercher)traite la reponse ligne par ligne
-							while ($donnee = $result->fetch()) {
-								echo '<tr>
-										<td>' . $donnee['nom'] . '</td>
-										<td>' . $donnee['prenom'] . '</td>
-										<td>' . $donnee['age']. '</td>
-										<td>' . $donnee['langage']. '</td>
-				<a href="delete_action.php">' . $donnee['Action'] . '</a>
-							 <a href="Edit">' . $donnee['Action'] . '</a>  
-									  </tr>';
-							}
-
-						?>
+							while ($donnee = $result->fetch()) { ?>
+								<tr>
+						<td><?php echo $donnee['id'];?></td>
+						<td><?php echo $donnee['nom'];?></td>
+						<td><?php echo $donnee['prenom'];?></td>
+						<td><?php echo $donnee['age'];?></td>
+						<td><?php echo $donnee['langage'];?></td>
+		<td><a href="delete_action.php?id=<?php echo $donnee['id'];?>">Delete</a>
+		<a href="edit_action.php?id=<?php echo $donnee['id']; ?>">edit</a></td>
+								</tr>
+								<?php } ?>
 						
 					</tbody>
 				</table>
@@ -47,4 +46,8 @@ $result = $bdd->query('SELECT * FROM eleve');
 					
 			
 
-<?php include 'includes/footer.php'; ?>
+<?php include 'includes/footer.php';?>
+
+
+
+

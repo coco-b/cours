@@ -1,4 +1,3 @@
-
 <?php
 
 // on appel le fichier dans la base de donnée une seul fois avec _once
@@ -14,7 +13,7 @@ include_once 'modele/connection_bdd.php';
 	echo "merci de remplir tous les champs";
 }
 //convertir les caractere en string ->securite ->filtre htmlspecialchars
-else{
+else {
 	$nom = htmlspecialchars($_POST['nom']);
 	$prenom = htmlspecialchars($_POST['prenom']);
 	$age = htmlspecialchars($_POST['age']);
@@ -35,7 +34,7 @@ else{
 
 //redirection 
 
-header('location:form.php');
+header('location:add_student.php');
 
 
 //en parallele ...
