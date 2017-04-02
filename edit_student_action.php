@@ -4,9 +4,9 @@ include ('modele/connection_bdd.php');
 
 //convertir les caractere en string ->securite ->filtre htmlspecialchars
 	
-	if(empty($_POST['nom']) AND
-	   empty($_POST['prenom']) AND
-	   empty($_POST['age']) AND
+	if(empty($_POST['nom']) OR
+	   empty($_POST['prenom']) OR
+	   empty($_POST['age']) OR
 	   empty($_POST['langage']) 
 	){
 	echo "merci de remplir tous les champs";
@@ -37,8 +37,8 @@ $query->closeCursor();
 }
 
 else {
-	echo "id n'est pas un nombre"
-	header('Refresh: 5;url=index2.php');
+	echo "id n'est pas un nombre";
+	header('Refresh: 5;url=index2.php');	
 }
-
+}
 ?>

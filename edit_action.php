@@ -1,6 +1,7 @@
 <?php include 'includes/header.php'; ?>
 requet pour recuperer les elements de mon article en fonction de mon id		
-		<form method="POST" action="edit_student_action.php?id=<php echo $_GET['id'];"?>
+		<form method="POST" action="edit_student_action.php?id=<?php echo $_GET['id'];?>">
+							
 			<fieldset>
 				<h1>MODIFICATION</h1>
 				<label for="nom">Your name:</label>

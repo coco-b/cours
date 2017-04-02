@@ -1,5 +1,5 @@
 <?php include 'includes/header.php'; ?>		
-		<form method="POST" action="add_article_action.php">
+		<form method="POST" action="add_student_action.php">
 			<fieldset>
 				<label for="nom">Your name:</label>
 				<input type="text" name="nom" id="nom" autofocus/><br/>
